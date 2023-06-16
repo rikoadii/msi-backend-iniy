@@ -1,0 +1,31 @@
+{
+  "name": "wtc-hotel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node -r module-alias/register app/app.js",
+    "dev": "nodemon -r module-alias/register app/app.js"
+  },
+  "_moduleAliases": {
+  "@controllers": "app/controllers",
+  "@models": "app/models",
+  "@routes": "app/routes",
+  "@config": "./config"
+},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "module-alias": "^2.2.3",
+    "mysql": "^2.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
