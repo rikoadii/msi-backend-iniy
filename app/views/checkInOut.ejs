@@ -1,0 +1,68 @@
+<%- include('layouts/header') %> <%-include('layouts/navbar') %> <%-
+include('layouts/sidebar') %>
+<div id="layoutSidenav_content">
+  <main>
+    <div class="container-fluid px-4">
+      <h1 class="mt-4">Daftar Check In / Out</h1>
+      <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+        <li class="breadcrumb-item active">Check In / Out</li>
+      </ol>
+      <div class="card mb-4">
+        <div class="card-header">
+          <i class="fas fa-table me-1"></i>
+          Daftar Check In / Out
+        </div>
+        <div class="card-body">
+          <table id="datatablesSimple" class="dataTables">
+            <thead>
+              <tr>
+                <th>No.</th>
+                <th>Nama Tamu</th>
+                <th>Kamar Dipesan</th>
+                <th>Kelas Kamar</th>
+                <th>Jumlah Dipesan</th>
+                <th>Check IN</th>
+                <th>Check OUT</th>
+                <th>Total Pembayaran</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+            <tfoot>
+              <tr>
+                <th>No.</th>
+                <th>Nama Tamu</th>
+                <th>Kamar Dipesan</th>
+                <th>Kelas Kamar</th>
+                <th>Jumlah Dipesan</th>
+                <th>Check IN</th>
+                <th>Check OUT</th>
+                <th>Total Pembayaran</th>
+                <th>Aksi</th>
+              </tr>
+            </tfoot>
+            <tbody>
+              <% cio.forEach((c, index) => { %>
+              <tr>
+                <td><%= index + 1 %></td>
+                <td><%= c.nama_tamu %></td>
+                <td><%= c.kamar_dipesan %></td>
+                <td><%= c.kelas_kamar %></td>
+                <td><%= c.jumlah_kamar %></td>
+                <td><%= c.check_in %></td>
+                <td><%= c.check_out %></td>
+                <td><%= c.total_pembayaran %></td>
+                <td>
+                  <a href="/editCIO/<%= c.id_cio %>" class="btn btn-warning btn-sm">Edit</a> || <a href="/hapusCIO/<%= c.id_cio %>" class="btn btn-danger btn-sm">Hapus</a>
+                </td>
+              </tr>
+              <% }); %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <%- include('layouts/footer.ejs') %>
+</div>

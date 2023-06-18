@@ -1,0 +1,53 @@
+<%- include('layouts/header') %> <%-include('layouts/navbar') %> <%-
+include('layouts/sidebar') %>
+<div id="layoutSidenav_content">
+  <main>
+    <div class="container-fluid px-4">
+      <h1 class="mt-4">Stock Kamar</h1>
+      <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+        <li class="breadcrumb-item active">Stock</li>
+      </ol>
+      <div class="card mb-4">
+        <div class="card-header">
+          <i class="fas fa-table me-1"></i>
+          Stock Kamar
+        </div>
+        <div class="card-body">
+          <table id="datatablesSimple">
+            <thead>
+              <tr>
+                <th>No.</th>
+                <th>Kode Kamar</th>
+                <th>Jumlah Kamar</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+            <tfoot>
+              <tr>
+                <th>No.</th>
+                <th>Kode Kamar</th>
+                <th>Jumlah Kamar</th>
+                <th>Aksi</th>
+              </tr>
+            </tfoot>
+            <tbody>
+              <% stock.forEach((s, index) => { %>
+              <tr>
+                <td><%= index + 1 %></td>
+                <td><%= s.kode_kamar %></td>
+                <td><%= s.jumlah_kamar %></td>
+                <td>
+                  <a href="/editKamar/<%= s.id_stock %>" class="btn btn-warning btn-sm">Edit</a> || <a href="/tamu/hapusKamar/<%= s.id_stock %>" class="btn btn-danger btn-sm">Hapus</a>
+                </td>
+              </tr>
+              <% }); %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <%- include('layouts/footer.ejs') %>
+</div>

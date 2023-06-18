@@ -5,8 +5,7 @@ const getStandardRoomsController = async (req, res) => {
     const results = await Room.getRoomsByClass("STANDART");
     res.status(200).json({ data: results });
   } catch (error) {
-    console.error("Kesalahan query:", error);
-    res.status(500).json({ error: "Terjadi kesalahan" });
+    throw error;
   }
 };
 const getMediumRoomsController = async (req, res) => {
@@ -14,8 +13,7 @@ const getMediumRoomsController = async (req, res) => {
     const results = await Room.getRoomsByClass("MEDIUM");
     res.status(200).json({ data: results });
   } catch (error) {
-    console.error("Kesalahan query:", error);
-    res.status(500).json({ error: "Terjadi kesalahan" });
+    throw error;
   }
 };
 const getVIPRoomsController = async (req, res) => {
@@ -23,8 +21,7 @@ const getVIPRoomsController = async (req, res) => {
     const results = await Room.getRoomsByClass("VIP");
     res.status(200).json({ data: results });
   } catch (error) {
-    console.error("Kesalahan query:", error);
-    res.status(500).json({ error: "Terjadi kesalahan" });
+    throw error;
   }
 };
 

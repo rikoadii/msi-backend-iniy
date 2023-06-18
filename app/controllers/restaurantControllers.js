@@ -5,8 +5,7 @@ const getMinumanListController = async (req, res) => {
     const results = await Restaurant.getRestaurantByType("minuman");
     res.status(200).json({ data: results });
   } catch (error) {
-    console.error("Kesalahan query:", error);
-    res.status(500).json({ error: "Terjadi kesalahan" });
+    throw error;
   }
 };
 const getMakananListController = async (req, res) => {
@@ -14,8 +13,7 @@ const getMakananListController = async (req, res) => {
     const results = await Restaurant.getRestaurantByType("makanan");
     res.status(200).json({ data: results });
   } catch (error) {
-    console.error("Kesalahan query:", error);
-    res.status(500).json({ error: "Terjadi kesalahan" });
+    throw error;
   }
 };
 

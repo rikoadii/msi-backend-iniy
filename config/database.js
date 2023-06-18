@@ -1,6 +1,5 @@
 const mysql = require("mysql");
 
-// Konfigurasi MySQL
 const db = mysql.createConnection({
   host: "localhost",
   user: "root",
@@ -8,7 +7,7 @@ const db = mysql.createConnection({
   database: "wtc-hotel",
 });
 
-// Menghubungkan ke MySQL
+
 db.connect((err) => {
   if (err) {
     console.error("Kesalahan koneksi MySQL: " + err.stack);
