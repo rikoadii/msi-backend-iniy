@@ -24,7 +24,7 @@ include('layouts/sidebar') %>
                 <th>Jumlah Dipesan</th>
                 <th>Check IN</th>
                 <th>Check OUT</th>
-                <th>Total Pembayaran</th>
+                <th>Biaya Sewa</th>
                 <th>Aksi</th>
               </tr>
             </thead>
@@ -37,7 +37,7 @@ include('layouts/sidebar') %>
                 <th>Jumlah Dipesan</th>
                 <th>Check IN</th>
                 <th>Check OUT</th>
-                <th>Total Pembayaran</th>
+                <th>Biaya Sewa</th>
                 <th>Aksi</th>
               </tr>
             </tfoot>
@@ -51,9 +51,9 @@ include('layouts/sidebar') %>
                 <td><%= c.jumlah_kamar %></td>
                 <td><%= c.check_in %></td>
                 <td><%= c.check_out %></td>
-                <td><%= c.total_pembayaran %></td>
+                <td>Rp. <%= c.harga_sewa_kamar %></td>
                 <td>
-                  <a href="/editCIO/<%= c.id_cio %>" class="btn btn-warning btn-sm">Edit</a> || <a href="/hapusCIO/<%= c.id_cio %>" class="btn btn-danger btn-sm">Hapus</a>
+                  <a href="/editCIO/<%= c.id_cio %>" class="btn btn-warning btn-sm">Edit</a> || <a href="/admin/hapusCIO/<%= c.id_cio %>" class="btn btn-danger btn-sm" onclick="confirm('yakin hapus data ?')">Hapus</a>
                 </td>
               </tr>
               <% }); %>

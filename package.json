@@ -9,11 +9,11 @@
     "dev": "nodemon -r module-alias/register app/app.js"
   },
   "_moduleAliases": {
-  "@controllers": "app/controllers",
-  "@models": "app/models",
-  "@routes": "app/routes",
-  "@config": "./config"
-},
+    "@controllers": "app/controllers",
+    "@models": "app/models",
+    "@routes": "app/routes",
+    "@config": "./config"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",

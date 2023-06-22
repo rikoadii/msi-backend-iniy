@@ -1,0 +1,63 @@
+<%- include('layouts/header') %> <%-include('layouts/navbar') %> <%-
+include('layouts/sidebar') %>
+<div id="layoutSidenav_content">
+  <main>
+    <div class="container-fluid px-4">
+      <h1 class="mt-4">kamar Kamar</h1>
+      <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+        <li class="breadcrumb-item active">Form Tambah Kamar</li>
+      </ol>
+      <div class="card mb-4">
+        <div class="card-header">
+          <i class="fas fa-table me-1"></i>
+          Form Tambah
+        </div>
+        <div class="card-body">
+          <form action="/admin/addKamar/" method="post">
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" placeholder="Masukkan Kode Kamar" id="kodeKamar" name="code_room">
+                <label for="kodeKamar">Kode Kamar</label>
+            </div>
+
+             <div class="form-floating mb-3">
+                <select class="form-control" id="roomClass" name="room_class">
+                    <option disabled>-- PILIH KELAS KAMAR --</option>
+                    <option >STANDART</option>
+                    <option >MEDIUM</option>
+                    <option >VIP</option>
+                </select>
+                <label for="kelasKamar">KELAS KAMAR</label>
+            </div>
+             <div class="form-floating mb-3">
+                <select class="form-control" id="typeKamar" name="room_type">
+                    <option disabled>-- PILIH TYPE KAMAR --</option>
+                    <option >DEOUBLE BED</option>
+                    <option >TWIN BED</option>
+                </select>
+                <label for="kelasKamar">KELAS KAMAR</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" name="price" class="form-control" placeholder="Masukkan Harga Kamar" id="hargaKamar" >
+                <label for="hargaKamar">Harga Kamar</label>
+            </div>
+            <div class="form-floating mb-3">
+                <textarea name="detail_room" class="form-control" placeholder="Masukkan Detail Kamar" id="detailKamar" cols="80" rows="8"></textarea>
+                <label for="detailKamar">Detail Kamar</label>
+            </div>
+              
+            <div class="mt-4 mb-0">
+              <div class="d-grid">
+                <button class="btn btn-primary btn-block" type="submit"
+                  >Add Data</a
+                >
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <%- include('layouts/footer.ejs') %>
+</div>

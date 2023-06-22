@@ -8,6 +8,7 @@ include('layouts/sidebar') %>
         <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
         <li class="breadcrumb-item active">Stock</li>
       </ol>
+      <a href="/admin/tambah-stock" class="btn btn-primary mb-2">+ stock</a>
       <div class="card mb-4">
         <div class="card-header">
           <i class="fas fa-table me-1"></i>
@@ -38,7 +39,7 @@ include('layouts/sidebar') %>
                 <td><%= s.kode_kamar %></td>
                 <td><%= s.jumlah_kamar %></td>
                 <td>
-                  <a href="/editKamar/<%= s.id_stock %>" class="btn btn-warning btn-sm">Edit</a> || <a href="/tamu/hapusKamar/<%= s.id_stock %>" class="btn btn-danger btn-sm">Hapus</a>
+                  <a href="/admin/editStock/<%= s.id_stock %>" class="btn btn-warning btn-sm">Edit</a> || <a href="/admin/hapusStock/<%= s.id_stock %>" class="btn btn-danger btn-sm">Hapus</a>
                 </td>
               </tr>
               <% }); %>

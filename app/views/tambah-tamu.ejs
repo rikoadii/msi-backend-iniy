@@ -1,0 +1,138 @@
+<%- include('layouts/header') %> <%-include('layouts/navbar') %> <%-
+include('layouts/sidebar') %>
+<div id="layoutSidenav_content">
+  <main>
+    <div class="container-fluid px-4">
+      <h1 class="mt-4">Stock Kamar</h1>
+      <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+        <li class="breadcrumb-item active">Form Edit Tamu</li>
+      </ol>
+      <div class="card mb-4">
+        <div class="card-header">
+          <i class="fas fa-table me-1"></i>
+          Form Edit
+        </div>
+        <div class="card-body">
+          <form action="/admin/addTamu" method="post">
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" placeholder="Masukkan Nama Tamu" id="namaTamu" name="nama_tamu" >
+                <label for="namaTamu" >Nama Tamu</label>
+            </div>
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <div class="form-floating mb-3 mb-md-0">
+                  <input
+                    class="form-control"
+                    id="emailTamu"
+                    type="text"
+                    name="email"
+                    placeholder="Masukkan Email Tamu"
+
+                  />
+                  <label for="emailTamu">Email Tamu</label>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <input
+                    class="form-control"
+                    id="nomorWa"
+                    type="text"
+                    name="nomor_wa"
+                    placeholder="Masukkan nomor Whatsapp Tamu"
+
+                  />
+                  <label for="nomorWa">Nomor WA</label>
+                </div>
+              </div>
+            </div>
+            <div class="form-floating mb-3">
+                <select class="form-control" id="kodeKamar" name="kamar_dipesan">
+                    <option>-- PILIH KODE KAMAR --</option>
+                    <option disabled>-- STANDARD --</option>
+                    <option>AED44</option>
+                    <option>AED45</option>
+                    <option>AED46</option>
+                    <option disabled>-- MEDIUM --</option>
+                    <option >AED55</option>
+                    <option>AED56</option>
+                    <option>AED57</option>
+                    <option disabled>-- VIP --</option>
+                    <option>AED66</option>
+                    <option>AED67</option>
+                    <option>AED68</option>
+                </select>
+                <label for="kodeKamar">Pilih Kamar</label>
+            </div>
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <div class="form-floating mb-3 mb-md-0">
+                  <input
+                    class="form-control"
+                    id="kelasKamar"
+                    placeholder="Kelas Kamar"
+                    name="kelas_kamar"
+                  />
+                  <label for="kelasKamar">Kelas Kamar</label>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-floating mb-3 mb-md-0">
+                  <input
+                    class="form-control"
+                    id="typeKamar"
+                    type="text"
+                    placeholder="Type Kamar"
+                    name="type_kamar"
+                  />
+                  <label for="typeKamar">Type Kamar</label>
+                </div>
+              </div>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="number" name="jumlah_kamar" class="form-control" placeholder="Masukkan Kode Kamar" id="jumlahKamar">
+                <label for="jumlahKamar">Jumlah Kamar</label>
+            </div>
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <div class="form-floating mb-3 mb-md-0">
+                  <input
+                    class="form-control"
+                    id="checkIN"
+                    placeholder="check in"
+                    name="check_in"
+                    type="date"
+                  />
+                  <label for="checkIN">Check-IN</label>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-floating mb-3 mb-md-0">
+                  <input
+                    class="form-control"
+                    id="checkOUut"
+
+                    placeholder="check out"
+                    name="check_out"
+                    type="date"
+                  />
+                  <label for="checkOut">Check-OUT</label>
+                </div>
+              </div>
+            </div>
+            <div class="mt-4 mb-0">
+              <div class="d-grid">
+                <button class="btn btn-primary btn-block" type="submit"
+                  >Tambah Tamu</a
+                >
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <%- include('layouts/footer.ejs') %>
+</div>

@@ -1,0 +1,42 @@
+<%- include('layouts/header') %> <%-include('layouts/navbar') %> <%-
+include('layouts/sidebar') %>
+<div id="layoutSidenav_content">
+  <main>
+    <div class="container-fluid px-4">
+      <h1 class="mt-4">Stock Kamar</h1>
+      <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+        <li class="breadcrumb-item active">Form Edit Stock</li>
+      </ol>
+      <div class="card mb-4">
+        <div class="card-header">
+          <i class="fas fa-table me-1"></i>
+          Form Edit
+        </div>
+        <div class="card-body">
+          <form action="/admin/editStock/<%= stock.id_stock %>" method="post">
+            <div class="form-floating mb-3">
+                <input type="text" name="kode_kamar" class="form-control" placeholder="Masukkan Kode Kamar" id="kodeKamar" name="nama_tamu" value="<%= stock.kode_kamar %>">
+                <label for="kodeKamar">Kode Kamar</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="number" name="jumlah_kamar" class="form-control" placeholder="Masukkan jumlah Kamar" id="jumlahKamar" value="<%= stock.jumlah_kamar %>">
+                <label for="jumlahKamar">Jumlah Kamar</label>
+            </div>
+          
+              
+            <div class="mt-4 mb-0">
+              <div class="d-grid">
+                <button class="btn btn-primary btn-block" type="submit"
+                  >Update Data</a
+                >
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <%- include('layouts/footer.ejs') %>
+</div>

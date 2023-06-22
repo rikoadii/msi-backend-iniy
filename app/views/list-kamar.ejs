@@ -3,47 +3,50 @@ include('layouts/sidebar') %>
 <div id="layoutSidenav_content">
   <main>
     <div class="container-fluid px-4">
-      <h1 class="mt-4">Daftar Admin</h1>
+      <h1 class="mt-4">List Kamar</h1>
       <ol class="breadcrumb mb-4">
         <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
-        <li class="breadcrumb-item active">Daftar Admin</li>
+        <li class="breadcrumb-item active">List Kamar</li>
       </ol>
-      <a href="/admin/tambah-tamu" class="btn btn-primary mb-2">+ admin</a>
+      <a href="/admin/tambah-kamar" class="btn btn-primary mb-2">+ kamar</a>
       <div class="card mb-4">
         <div class="card-header">
           <i class="fas fa-table me-1"></i>
-          Daftar Admin
+          Daftar Kamar
         </div>
         <div class="card-body">
           <table id="datatablesSimple">
             <thead>
               <tr>
                 <th>No.</th>
-                <th>Username</th>
-                <th>Nama admin</th>
-                <th>Email</th>
+                <th>kode kamar</th>
+                <th>kelas kamar</th>
+                <th>type kamar</th>
+                <th>harga</th>
                 <th>Aksi</th>
               </tr>
             </thead>
             <tfoot>
               <tr>
                 <th>No.</th>
-                <th>Username</th>
-                <th>Nama admin</th>
-                <th>Email</th>
+                <th>kode kamar</th>
+                <th>kelas kamar</th>
+                <th>type kamar</th>
+                <th>harga</th>
                 <th>Aksi</th>
               </tr>
             </tfoot>
             <tbody>
-              <% list.forEach((l, index) => { %>
+              <% kamar.forEach((k, index) => { %>
               
                 <tr>
                   <td><%= index + 1 %></td>
-                    <td><%= l.username %></td>
-                    <td><%= l.nama_admin %></td>
-                    <td><%= l.email %></td>
+                    <td><%= k.code_room %></td>
+                    <td><%= k.room_class %></td>
+                    <td><%= k.room_type %></td>
+                    <td>Rp. <%= k.price %></td>
                     <td>
-                  <a href="/admin/editAdmin/<%= l.id_admin %>" class="btn btn-warning btn-sm">Edit</a> || <a href="/admin/hapusTamu/<%= l.id_admin %>" class="btn btn-danger btn-sm">Hapus</a>
+                  <a href="/admin/editKamar/<%= k.id_room %>" class="btn btn-warning btn-sm">Edit</a> || <a href="/admin/hapusKamar/<%= k.id_room %>" class="btn btn-danger btn-sm">Hapus</a>
                 </td>
                 </tr>
               <% } ) %>

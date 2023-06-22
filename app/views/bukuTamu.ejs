@@ -8,6 +8,7 @@ include('layouts/sidebar') %>
         <li class="breadcrumb-item"><a href="/">Dashboard</a></li>
         <li class="breadcrumb-item active">Tamu</li>
       </ol>
+      <a href="/admin/tambah-tamu" class="btn btn-primary mb-2">+ tamu</a>
       <div class="card mb-4">
         <div class="card-header">
           <i class="fas fa-table me-1"></i>
@@ -47,7 +48,7 @@ include('layouts/sidebar') %>
                 <td><%= g.kamar_dipesan %></td>
                 <td><%= g.kelas_kamar %></td>
                 <td>
-                  <a href="/editTamu/<%= g.id_tamu %>" class="btn btn-warning btn-sm">Edit</a> || <a href="/admin/hapusTamu/<%= g.id_tamu %>" class="btn btn-danger btn-sm" onclick="alert('yakin?')">Hapus</a>
+                  <a href="/admin/editTamu/<%= g.id_tamu %>" class="btn btn-warning btn-sm">Edit</a> || <a href="/admin/hapusTamu/<%= g.id_tamu %>" class="btn btn-danger btn-sm" onclick="confirm('yakin hapus data ?')">Hapus</a>
                 </td>
               </tr>
               <% }); %>
